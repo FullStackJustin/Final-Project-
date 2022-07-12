@@ -14,13 +14,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			]
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			login: async () => {
+				// try {
+				
+				// }
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
