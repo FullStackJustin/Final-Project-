@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 import os
-from flask import Flask, request, jsonify, url_for, send_from_directory
+from flask import Flask, request, session, g, redirect, render_template, jsonify, url_for, send_from_directory
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
@@ -11,6 +11,28 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+
+@app.route('/')
+def Home():
+    return "HELLLO"
+@app.route('/login', methods=['GET', 'POST'])
+    def login():
+        if request.method == 'POST':
+            session.pop('user_id', None)
+            Username = request.form['username']
+            Password = request.form['password']
+        if Username and Password == 
+        Username = request.form['username']
+        Password = request.form['password']
+        return render_template('login.html', username=Username, password=Password)
+
+
+
+
+
+
+
+
 
 #from models import Person
 
